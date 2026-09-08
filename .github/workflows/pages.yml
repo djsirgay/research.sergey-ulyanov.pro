@@ -1,0 +1,66 @@
+name: Deploy research from a reviewed source commit
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_ref:
+        description: 'Exact 40-character commit SHA in djsirgay/sergey-ulyanov.pro'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: research-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Require an immutable source commit
+        env:
+          SOURCE_SHA: ${{ inputs.source_ref }}
+        run: |
+          if [[ ! "$SOURCE_SHA" =~ ^[0-9a-fA-F]{40}$ ]]; then
+            echo "source_ref must be an exact 40-character commit SHA."
+            exit 1
+          fi
+
+      - name: Check out the canonical public research source
+        uses: actions/checkout@v4
+        with:
+          repository: djsirgay/sergey-ulyanov.pro
+          ref: ${{ inputs.source_ref }}
+          path: source
+          persist-credentials: false
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Validate the domain export
+        working-directory: source
+        run: node --test tests/research-domain.test.mjs
+
+      - name: Build the isolated public research site
+        run: node source/scripts/build-research-domain.mjs --source source --out "${RUNNER_TEMP}/research-site"
+
+      - name: Configure this research repository's Pages deployment
+        uses: actions/configure-pages@v5
+
+      - name: Upload the research artifact only
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/research-site
+
+      - name: Deploy research
+        id: deployment
+        uses: actions/deploy-pages@v4
