@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Global English Accent Evidence Lab — Research Protocol</title>
+<meta name="description" content="A source-grounded research protocol and digital prototype for comparing speaker-level English accent evidence without collapsing variation into stereotypes.">
+<meta property="og:title" content="Global English Accent Evidence Lab"><meta property="og:description" content="Research protocol + prototype by Sergey Ulyanov.">
+<link rel="stylesheet" href="../styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"Global English Accent Evidence Lab: a source-grounded protocol for speaker-level comparison","author":{"@type":"Person","name":"Sergey Ulyanov"},"dateModified":"2026-10-03","articleSection":"Research protocol / working paper","description":"A research protocol and prototype for organizing and comparing speaker-level English accent evidence with explicit provenance, uncertainty and anti-stereotyping safeguards."}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="sitehead"><div class="wrap inner">
+<a class="brand" href="../">SERGEY ULYANOV / RESEARCH</a>
+<nav class="nav" aria-label="Primary"><a href="#abstract">Abstract</a><a href="#method">Method</a><a href="#limitations">Limitations</a><a href="#references">References</a></nav>
+</div></header>
+
+<main id="main">
+<section class="hero"><div class="wrap">
+<div class="eyebrow">Research protocol + supporting prototype · v0.2</div>
+<h1>Global English Accent Evidence Lab</h1>
+<p class="lede">A source-grounded framework for organizing, comparing and annotating authentic English speech while keeping the unit of analysis where it belongs: <strong>the speaker and recording, not a country-sized stereotype.</strong></p>
+<div class="meta"><span class="pill status">● Working research artifact</span><span class="pill">Author <strong>Sergey Ulyanov</strong></span><span class="pill">Updated <strong>October 3, 2026</strong></span></div>
+<div class="note" style="margin-top:28px"><strong>Authorship / review note.</strong> A methodological review packet is being prepared for speech and accent coach Louis Colaianni. His participation, endorsement and authorship are <strong>not yet confirmed</strong>. The current work and claims are Sergey Ulyanov’s responsibility.</div>
+</div></section>
+
+<section><div class="wrap grid">
+<aside class="toc" aria-label="Article contents">
+<div class="eyebrow">Contents</div>
+<a href="#abstract">Abstract</a><a href="#question">Research question</a><a href="#contribution">Contribution</a><a href="#sources">Evidence base</a><a href="#method">Method</a><a href="#codebook">Codebook</a><a href="#reliability">Agreement analysis</a><a href="#prototype">Prototype</a><a href="#evaluation">Evaluation plan</a><a href="#ethics">Ethics & provenance</a><a href="#limitations">Limitations</a><a href="#reproducibility">Reproducibility</a><a href="#references">References</a>
+</aside>
+
+<article class="articlebody prose">
+<section id="abstract"><div class="eyebrow">Abstract</div><h2>What this project is testing</h2>
+<p>Digital accent archives make it possible to hear speech variation at a scale that was previously difficult to access, but interfaces can also encourage a false shortcut: treating one speaker as “the accent” of a country, language or social group. This project asks how a research interface can support accent learning and comparative phonetic observation while preserving source provenance, within-group variation and uncertainty.</p>
+<p>The work combines two layers: a <strong>research protocol</strong> for speaker-level coding and a <strong>supporting prototype</strong> for discovery, A/B listening, practice-session design and independent annotation. The current version is exploratory. It does not claim representative coverage, validated pedagogical effects or a finished accent taxonomy.</p>
+<div class="callout"><strong>Core claim under test:</strong> an interface that foregrounds provenance, speaker-level metadata, uncertainty and independent coding can make accent comparison more useful without requiring users to collapse variation into national labels.</div>
+</section>
+
+<section id="question"><div class="eyebrow">01 · Research question</div><h2>Primary question</h2>
+<p><strong>How can a source-grounded digital interface organize global English accent evidence for learnability and comparison without collapsing speaker-level variation into stereotypes?</strong></p>
+<h3>Secondary questions</h3>
+<ul>
+<li>Which phonetic descriptors can be coded consistently enough to support comparison across independent reviewers?</li>
+<li>Which observations should remain qualitative rather than be forced into categories?</li>
+<li>How should provenance and uncertainty be shown so users can distinguish source facts from researcher interpretation?</li>
+<li>Can a comparison workflow support actors and advanced learners without implying that a single recording represents a population?</li>
+</ul>
+</section>
+
+<section id="contribution"><div class="eyebrow">02 · Contribution</div><h2>What is new here</h2>
+<div class="grid">
+<div class="card wide"><h3>Evidence architecture</h3><p>Source links, speaker metadata, coding notes and reviewer identity are separate data layers rather than one flattened “accent profile.”</p></div>
+<div class="card wide"><h3>Research / pedagogy split</h3><p>Learning tools and research annotations coexist, but a coaching drill is not treated as evidence and a research annotation is not presented as a learning outcome.</p></div>
+<div class="card wide"><h3>Disagreement as data</h3><p>Independent coders can disagree, flag uncertainty and reconcile later; disagreement is not silently overwritten.</p></div>
+<div class="card wide"><h3>Anti-stereotyping constraint</h3><p>The design explicitly prohibits “one speaker = one place” interpretation and avoids automated accent scores.</p></div>
+</div>
+</section>
+
+<section id="sources"><div class="eyebrow">03 · Evidence base</div><h2>Archives and unit of analysis</h2>
+<p>The prototype is designed around primary or source-adjacent speech archives. Two source families currently inform the architecture:</p>
+<ul>
+<li><strong>IDEA — International Dialects of English Archive:</strong> used as a source archive for individual speaker recordings and associated contextual material. Audio remains at the original source; the research tool should store only the minimum metadata needed for indexing and provenance.</li>
+<li><strong>George Mason University Speech Accent Archive:</strong> useful for controlled comparison because speakers read a common elicitation paragraph and the archive exposes demographic/linguistic context and phonetic analysis.</li>
+</ul>
+<div class="callout"><strong>Unit of analysis:</strong> one recorded speaker/sample. Geographic, linguistic or demographic labels are indexing variables—not claims that the speaker represents everyone sharing that label.</div>
+<h3>Sampling policy for the pilot</h3>
+<p>The first coded set should be <strong>purposeful, not representative</strong>: enough variation to stress-test the codebook across source types, language backgrounds and speech patterns. A later quantitative study would need a pre-registered sampling frame before population-level inference.</p>
+</section>
+
+<section id="method"><div class="eyebrow">04 · Method</div><h2>Research workflow</h2>
+<div class="method">
+<article><div><h3>Index source records</h3><p>Record stable sample ID, source URL, archive, source-visible speaker/context metadata and access date. Do not infer missing demographics.</p></div></article>
+<article><div><h3>Select a pilot corpus</h3><p>Use transparent inclusion/exclusion rules and preserve the reason each sample entered the coding set.</p></div></article>
+<article><div><h3>Independent coding</h3><p>Coder A and coder B annotate the same sample without seeing each other’s answers. Free-text observations stay distinct from categorical variables.</p></div></article>
+<article><div><h3>Quantify agreement where appropriate</h3><p>Report raw observed agreement and a chance-corrected coefficient such as Cohen’s κ for pre-defined nominal fields when sample size and category distribution make that interpretable.</p></div></article>
+<article><div><h3>Reconcile disagreements</h3><p>Review source audio and operational definitions; preserve original coder responses and store the reconciled decision separately.</p></div></article>
+<article><div><h3>Evaluate the interface separately</h3><p>Usability and learning outcomes require their own study. Prototype activity logs are not evidence of pedagogical effectiveness.</p></div></article>
+</div>
+</section>
+
+<section id="codebook"><div class="eyebrow">05 · Codebook</div><h2>Annotation schema v0.2</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Field</th><th>Type</th><th>Operational rule</th></tr></thead>
+<tbody>
+<tr><td>Rhoticity</td><td>Nominal + uncertainty</td><td>Code post-vocalic /r/ realization only when the sample provides enough tokens; use mixed/uncertain rather than forcing a binary label.</td></tr>
+<tr><td>Rhythm</td><td>Descriptive category + notes</td><td>Treat “stress-timed / syllable-timed” as heuristic tendencies, not natural kinds. Require supporting auditory observations.</td></tr>
+<tr><td>TH realization</td><td>Structured notes</td><td>Record observed /θ, ð/ realizations and substitutions with examples; avoid generalizing beyond the sample.</td></tr>
+<tr><td>/r/ quality</td><td>Nominal + notes</td><td>Approximate articulatory/auditory quality only when sufficiently audible; otherwise uncertain.</td></tr>
+<tr><td>Vowels</td><td>Free text by lexical set</td><td>Use lexical-set labels to organize observations while retaining token examples and uncertainty.</td></tr>
+<tr><td>Consonants</td><td>Free text</td><td>Record recurring sample-supported patterns and example words.</td></tr>
+<tr><td>Prosody</td><td>Free text</td><td>Describe pitch movement, prominence, phrasing and tempo without personality inference.</td></tr>
+<tr><td>Sociolinguistic context</td><td>Source-grounded notes</td><td>Only source-visible context. No inference of class, ethnicity, identity or competence from voice alone.</td></tr>
+<tr><td>Confidence / review</td><td>Ordinal + flag</td><td>Coder confidence is metadata, not evidence. Low-confidence records enter an expert-review queue.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="reliability"><div class="eyebrow">06 · Agreement analysis</div><h2>How disagreement is reported</h2>
+<p>The current research module stores annotations separately by coder and can compute <strong>observed agreement</strong> and <strong>Cohen’s κ</strong> for selected nominal fields on samples coded by both reviewers. These are different quantities: raw agreement is a descriptive proportion; κ adjusts agreement for expected chance agreement under its model assumptions.</p>
+<div class="note"><strong>Interpretation rule:</strong> no κ value is meaningful without <em>n</em>, category prevalence and the operational codebook. Small pilot sets should be reported as calibration evidence, not as proof that the coding system is reliable in general.</div>
+</section>
+
+<section id="prototype"><div class="eyebrow">07 · Supporting artifact</div><h2>What the prototype already supports</h2>
+<div class="statrow"><div class="stat"><strong>Discover</strong><span>Search and filter source-indexed speakers</span></div><div class="stat"><strong>Audio Lab</strong><span>A/B loops, speed control, blind listening</span></div><div class="stat"><strong>Research</strong><span>Independent coding, review flags, exports</span></div></div>
+<ul>
+<li>Source-aware discovery across IDEA-indexed and GMU-derived records.</li>
+<li>Direct playback for compatible GMU records and source-link handling for IDEA.</li>
+<li>A–B looping, playback-rate control, blind ear-training and local microphone recording.</li>
+<li>Coach-session builder with phonetic targets, lexical-set word banks and IPA entry.</li>
+<li>Separate coder state, dual-coded sample detection, review queue, CSV/JSON export and activity logging.</li>
+</ul>
+<p class="small"><strong>Implementation status:</strong> the research modules exist, but the newest modular build is being repackaged into a complete deployable artifact. A broken or partial build is intentionally not presented here as a finished application.</p>
+</section>
+
+<section id="evaluation"><div class="eyebrow">08 · Evaluation plan</div><h2>What would count as evidence</h2>
+<p>The next phase should separate <strong>method calibration</strong> from <strong>product evaluation</strong>.</p>
+<div class="grid">
+<div class="card wide"><h3>Study A — coding calibration</h3><p>Two independent reviewers code the same pre-selected pilot set. Report completion rate, uncertain items, disagreement patterns, observed agreement and κ only for suitable nominal fields. Revise the codebook before expansion.</p></div>
+<div class="card wide"><h3>Study B — interface usability</h3><p>Expert/advanced users complete predefined comparison tasks. Capture task success, error patterns, provenance comprehension and qualitative feedback. Do not infer learning gains from satisfaction alone.</p></div>
+</div>
+<h3>Later pedagogical study</h3>
+<p>If the tool is used for training, a separate prospective design should define a target skill, pre/post measures, comparison condition and assessment procedure before claiming educational benefit.</p>
+</section>
+
+<section id="ethics"><div class="eyebrow">09 · Ethics & provenance</div><h2>Guardrails</h2>
+<ul>
+<li>Do not redistribute IDEA audio or long copyrighted source text; link to the original record.</li>
+<li>Preserve the original archive citation and access date for every indexed item.</li>
+<li>Do not infer protected or sensitive traits from a voice sample.</li>
+<li>Do not rank speakers by “good/bad,” “native-like” or an automated accent score.</li>
+<li>Keep researcher observations distinct from source commentary.</li>
+<li>Use the minimum speaker metadata necessary for the research question.</li>
+</ul>
+<p>The GMU Speech Accent Archive explicitly describes itself as both a teaching and research tool and publishes its licensing information; any redistributed or derived material should follow the source’s current license terms.</p>
+</section>
+
+<section id="limitations"><div class="eyebrow">10 · Limitations</div><h2>What the current project cannot claim</h2>
+<ul>
+<li>The indexed archives are not a census of global English variation.</li>
+<li>Archive contributors are not random samples of the populations attached to their labels.</li>
+<li>Auditory coding is researcher-dependent and requires operational definitions plus calibration.</li>
+<li>Lexical-set and rhythm labels are analytical tools; they can oversimplify gradient or mixed patterns.</li>
+<li>The current build has no completed outcome study, so it cannot claim improved pronunciation, acting performance or reduced bias.</li>
+<li>Independent expert review has not yet been completed.</li>
+</ul>
+</section>
+
+<section id="reproducibility"><div class="eyebrow">11 · Reproducibility</div><h2>Research record</h2>
+<p>The tool is designed to export source IDs, per-coder annotations, sessions and activity history as machine-readable files. The public research layer will version the protocol and codebook separately from the application so methodological changes can be tracked.</p>
+<p><strong>Current version:</strong> v0.2 · October 3, 2026. <strong>Status:</strong> protocol + prototype; pilot coding and external review pending.</p>
+</section>
+
+<section id="references"><div class="eyebrow">References</div><h2>Primary sources & methods</h2>
+<ol class="refs">
+<li>International Dialects of English Archive (IDEA). <a href="https://www.dialectsarchive.com/" rel="noreferrer">dialectsarchive.com</a>.</li>
+<li>Weinberger, S. Speech Accent Archive, George Mason University. <a href="https://accent.gmu.edu/" rel="noreferrer">accent.gmu.edu</a>.</li>
+<li>Cohen, J. (1960). “A Coefficient of Agreement for Nominal Scales.” <em>Educational and Psychological Measurement</em>, 20(1), 37–46. DOI: <a href="https://doi.org/10.1177/001316446002000104">10.1177/001316446002000104</a>.</li>
+<li>Wells, J. C. (1982). <em>Accents of English</em>. Cambridge University Press. Lexical sets are used here as an organizing notation, not as a claim of discrete accent types.</li>
+</ol>
+</section>
+</article>
+</div></section>
+</main>
+<footer class="footer"><div class="wrap inner"><span><a href="../">← Research index</a></span><span>Sergey Ulyanov · working research artifact · v0.2</span></div></footer>
+</body></html>
